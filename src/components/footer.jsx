@@ -1,7 +1,7 @@
 import React from 'react'
 import "../assets/footer.css"
 
-function Footer(props) {
+function Footer() {
   return (
     <footer className='footer-component'>
       <p>2022</p>
