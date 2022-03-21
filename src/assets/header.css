@@ -1,5 +1,12 @@
+.header {
+  height: 79px;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+}
+
 .title__header {
-    position: absolute;
+  position: absolute;
   top: 27px;
   left: 45px;
   width: 108px;
@@ -21,23 +28,18 @@
   margin-right: 15px;
 }
 
-.header {
-  height: 79px;
-  display: flex;
-  align-items: center;
-  position: fixed;
-  top: 0;
-}
-
 .Navbar {
   display: grid;
-  grid-template-columns: 1fr 1fr 1.8fr;
+  grid-template-columns: 1fr 1fr 1fr;
   position: absolute;
   right: 0;
   justify-content: center;
   align-items: center;
   height: inherit;
+  border: 1px solid;
 }
+
+
 
 .list__item {
   font-size: 14px;
@@ -46,7 +48,8 @@
   /* margin: 0 ; */
 }
 
-.text {
+.loggedIn,
+.notLoggedIn {
   display: flex;
   width: inherit;
   justify-content: center;
@@ -55,7 +58,8 @@
   height: inherit;
 }
 
-p {
+.notLoggedIn p,
+.loggedIn p {
   position: relative;
   top: 9px;
   color: white;
