@@ -1,10 +1,10 @@
 import React from 'react'
 import "../assets/button-orders.css"
 
-function Button_orders(props) {
+function ButtonOrders(props) {
   return (
     <button>{props.content}</button>
   )
 }
 
-export default Button_orders
+export default ButtonOrders
