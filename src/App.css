@@ -1,3 +1,36 @@
-.App {
-  text-align: center;
+.App{
+  width: 1410px; 
+  height: 911px;
+  /* border: 1px solid green; */
+} 
+
+.header{
+  position: absolute;
+  top: 0;
+  /* border: 1px solid; */
+  width: 1410px;
+}
+
+.footer{
+  position: absolute;
+  top:881px;
+  /* border: 1px solid; */
+  width: 1410px;
+}
+
+.orderList, .createOrder{
+  position: absolute;
+  top: 81px;
+  left: 58px;
+  /* border: 1px solid yellow; */
+  height:831px;
+  width: 1350px;
+  background-color: #0000000f;
+}
+
+.register__page, .signin__page{
+  position:absolute;
+  top: 81px;
+  /* border: 1px solid red; */
+  height: 750px;
 }

@@ -6,7 +6,7 @@ import LinkedIn from '../images/linkedin.svg'
 
 export default function ReferFooter(){
     return(
-        <footer>
+        <footer className='footer__main'>
             <div className='refer_and_earn'>
                 <h3>Now Refer & Earn ₹500 for every referral* </h3>
                 <span>* Terms and conditions will be applied</span>

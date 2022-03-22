@@ -1,6 +1,6 @@
 .header {
   height: 79px;
-  width: 100vw;
+  width: 1410px;
   display: flex;
   align-items: center;
 }
@@ -30,13 +30,12 @@
 
 .Navbar {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1.2fr;
   position: absolute;
   right: 0;
   justify-content: center;
   align-items: center;
   height: inherit;
-  border: 1px solid;
 }
 
 
@@ -48,8 +47,7 @@
   /* margin: 0 ; */
 }
 
-.loggedIn,
-.notLoggedIn {
+.user__header {
   display: flex;
   width: inherit;
   justify-content: center;
@@ -63,4 +61,12 @@
   position: relative;
   top: 9px;
   color: white;
+}
+
+.user__header p{
+  color: white;
+}
+
+.user__header:hover{
+  cursor: pointer;
 }

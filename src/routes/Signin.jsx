@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import '../assets/signin.css'
-import Header from '../components/Header'
 import Refer from '../components/ReferFooter'
 import ButtonSign from '../components/ButtonOrder'
 import axios from 'axios'
@@ -34,12 +33,13 @@ export default function Signin(){
                 console.log(res)
                 if(res.status === 200){
                     const token = res.data.Token
-                    const userData = res.data.User
+                    const userData = res.data.User.name
+                    console.log("respose",res.data.User.name);
                     localStorage.setItem('token',token)
                     localStorage.setItem('user',userData)
                     setRed("login_mobile")
                     setText("")
-                    history.push('./create')
+                    history.push('./orders')
                 }
             }).catch(error=>{
                 setText("Invalid user ")
@@ -60,7 +60,7 @@ export default function Signin(){
                     localStorage.setItem('user',userData)
                     setRed("login_mobile")
                     setText("")
-                    history.push('./create')
+                    history.push('./orders')
                 }
             }).catch(error=>{
                 setRed("login_mobile_red")

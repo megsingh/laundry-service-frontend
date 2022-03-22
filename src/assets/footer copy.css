@@ -1,0 +1,23 @@
+.footer-component{
+    background-color: #182838;
+    color: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* position:absolute;
+    top: calc(931px - 49.5px);
+    width: 100%;
+    border: 1px solid yellow; */
+}
+
+.footer-circle{
+    margin: 0.5rem;
+    border: 1px solid #FEFFFF;
+    border-radius: 50%;
+    min-height: 2.5%;
+    min-width: 1vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 0.75rem;
+}
