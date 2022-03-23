@@ -88,12 +88,14 @@ export default function Register(){
                             <input type='password' name='password' value={user.password} onChange={handleInputs}></input><br></br>
                         </div>
                         </div>
+                        <div className='register_checkbox_button'>
                         <div className='register_checkbox'>
                             <input type='checkbox' required></input>
                             <a href='#'>I agree to Terms and Condition receiving marketing and promotional materials</a><br></br>
                         </div>
                         <div className='register_button'>
                             <ButtonReg content="Register"></ButtonReg>
+                        </div>
                         </div>
                     </form>
                 </div>

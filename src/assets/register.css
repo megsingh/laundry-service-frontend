@@ -101,3 +101,14 @@
 .register_form input:focus{
     outline: none;
 }
+.register_checkbox input{
+    padding: 0;
+    margin: 2px;
+    width:20px;
+}
+.register_checkbox_button{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
