@@ -1,10 +1,12 @@
 import React, { useState } from 'react'
 import '../assets/register.css'
 import Header from '../components/Header'
+import Footer from '../components/footer'
 import Refer from '../components/ReferFooter'
 import ButtonReg from '../components/ButtonOrder'
 import axios from 'axios'
 import { Link,useHistory } from 'react-router-dom'
+import '../App.css'
 
 export default function Register(){
     let history = useHistory()
@@ -37,7 +39,13 @@ export default function Register(){
 
     return(
         <div>
-            {/* <Header isLoggedin="false"></Header> */}
+             <div className="header">
+          <Header />
+        </div>
+        <div className="footer">
+          <Footer />
+        </div> 
+        <div className="register__page">
             <div className='register_main'>
                 <div className='register_left'>
                     <div className='register_top'>
@@ -101,6 +109,7 @@ export default function Register(){
                 </div>
             </div>
             <Refer></Refer>
+        </div>
         </div>
     )
 }

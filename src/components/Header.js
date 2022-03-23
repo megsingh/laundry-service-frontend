@@ -25,9 +25,10 @@ function Header() {
     const logout = () => {
         if (isLoggedIn) {
             if (window.confirm("Are you sure you want to logout?") === true) {
-                setIsLoggedIn(false)
+                
                 localStorage.removeItem("token") // check if token names match witht= teammates
                 localStorage.removeItem("user") // check
+                setIsLoggedIn(false)
                 history.push("/")
             }
         }

@@ -2,8 +2,11 @@ import React, { useState } from 'react'
 import '../assets/signin.css'
 import Refer from '../components/ReferFooter'
 import ButtonSign from '../components/ButtonOrder'
+import Header from '../components/Header'
+import Footer from '../components/footer'
+import "../App.css"
 import axios from 'axios'
-import { useHistory, Link } from 'react-router-dom'
+import { useHistory, Link, Redirect } from 'react-router-dom'
 
 export default function Signin(){
     let history = useHistory()
@@ -37,9 +40,9 @@ export default function Signin(){
                     console.log("respose",res.data.User.name);
                     localStorage.setItem('token',token)
                     localStorage.setItem('user',userData)
-                    setRed("login_mobile")
-                    setText("")
-                    history.push('./orders')
+                    setRed("login_mobile");
+                    setText("");
+                   history.push("/orders")
                 }
             }).catch(error=>{
                 setText("Invalid user ")
@@ -56,6 +59,7 @@ export default function Signin(){
                 if(res.status === 200){
                     const token = res.data.Token
                     const userData = res.data.User
+                    console.log("setting local storage");
                     localStorage.setItem('token',token)
                     localStorage.setItem('user',userData)
                     setRed("login_mobile")
@@ -71,6 +75,11 @@ export default function Signin(){
 
     return(
         <div>
+            <div className="header">
+          <Header />
+        </div>
+        
+        <div className="signin__page">
             {/* <Header isLoggedin="false"></Header> */}
             <div className='login_main'>
                 <div className='login_left'>
@@ -105,6 +114,10 @@ export default function Signin(){
                 </div>
             </div>
             <Refer></Refer>
+        </div>
+        <div className="footer">
+          <Footer />
+        </div>
         </div>
     )
 }

@@ -1,10 +1,16 @@
 import React, { useState, useEffect } from 'react'
 import { useHistory } from "react-router-dom";
 import axios from "axios"
+
 import NoOrders from "./NoOrders"
 import Search from '../../components/Search'
 import TableComponent from './TableComponent'
 import ButtonOrder from '../../components/ButtonOrder'
+import Header from '../../components/Header';
+import Footer from '../../components/footer';
+import SideNavbar from '../../components/SideNavbar';
+
+import "../../App.css"
 import "../../assets/pastOrder.css"
 
 
@@ -25,7 +31,7 @@ function PastOrders() {
                 Authorization: 'Bearer ' + token
             }
         }).then(res => {
-            
+
             setOrders(res.data.orders)
             setOrderCount(res.data.orders.length)
         })
@@ -34,30 +40,30 @@ function PastOrders() {
     let ChildComponent
 
 
-    if (orderCount===0) {
+    if (orderCount === 0) {
         ChildComponent = (
             <NoOrders />
-            
+
         )
     } else {
         ChildComponent = (
-            
+
             <div className='past__orders container'>
 
                 <div className="orderpage__heading">
                     <div className='order__count'>
                         <label>Orders | {orderCount}</label>
                     </div>
-                    <div onClick = {handleCreateButton} className='button'>
-                    <ButtonOrder bg = "#5861AE" color ="whitesmoke" content="Create"/>
+                    <div onClick={handleCreateButton} className='button'>
+                        <ButtonOrder bg="#5861AE" color="whitesmoke" content="Create" />
                     </div>
                     <div className="search">
                         <Search></Search>
                     </div>
                 </div>
-                <TableComponent orders = {orders}/>
+                <TableComponent orders={orders} />
 
-                
+
             </div>
         )
     }
@@ -65,11 +71,23 @@ function PastOrders() {
 
     return (
         <div>
-            {console.log("past orders component rendering")}
-            {ChildComponent}
+            <div className="header">
+                <Header />
+            </div>
+            <div className='sidebar__orders'>
+                <SideNavbar />
+            </div>
+            <div>
+                {console.log("past orders component rendering")}
+                {ChildComponent}
+            </div>
+            <div className="footer">
+                <Footer />
+            </div>
         </div>
-            
-        
+
+
+
     )
 }
 

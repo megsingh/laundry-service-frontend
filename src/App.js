@@ -25,13 +25,13 @@ function App() {
   return (
     <Router>
       <div className="App">
-        <div className="header">
+        {/* <div className="header">
           <Header />
         </div>
         <div className="footer">
           <Footer />
-        </div>
-       
+        </div> */}
+
         {/* <PublicRoute exact path="/" isAuthenticated={isAuthenticated}>
           <div className="signin__page">
             <Signin />
@@ -62,41 +62,34 @@ function App() {
               <SideNavbar />
             </div>
             <div className="orderList">
-              <PastOrders /></div>
+            <PastOrders />
+              </div>
           </div>
-  </PrivateRoute> */}
+  </PrivateRoute>    */}
 
         {/* <Route path="*">
           <NoFoundComponent />
+          <div className="header">
+          <Header />
+        </div>
+        <div className="footer">
+          <Footer />
+        </div>
         </Route> */}
 
 
         <Switch>
           <Route exact path="/register">
-            <div className="register__page">
-              <Register />
-            </div>
-
+            <Register />
           </Route>
           <Route exact path="/orders">
-            <div className='sidebar__orders'>
-            <SideNavbar />
-            </div>
-            <div className="orderList">
-              <PastOrders /></div>
+            <PastOrders />
           </Route>
           <Route exact path="/create">
-          <div className='sidebar__create'>
-            <SideNavbar />
-            </div>
-            <div className="createOrder">
-              <Create />
-            </div>
+            <Create />
           </Route>
           <Route exact path="/">
-            <div className="signin__page">
-              <Signin />
-            </div>
+            <Signin />
           </Route>
         </Switch>
 

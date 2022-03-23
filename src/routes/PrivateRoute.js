@@ -3,9 +3,13 @@ import {
     Redirect
   } from 'react-router-dom';
   
-  function PrivateRoute({ children, isAuthenticated}) {
+  function PrivateRoute({ children, isAuthenticated,...rest}) {
+    console.log("inside private route");
+    
     return (
+     
       <Route
+      {...rest}
         render={
           () => (
             isAuthenticated
@@ -13,7 +17,7 @@ import {
                 children
               ) : (
                 <Redirect
-                  to="/signin"
+                  to="/"
                 />
               ))
         }

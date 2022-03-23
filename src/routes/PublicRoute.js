@@ -6,7 +6,7 @@ import {
   function PublicRoute({ children, isAuthenticated, ...rest }) {
     return (
       <Route
-        
+        {...rest}
         render={
           () => (
             !isAuthenticated ? (
