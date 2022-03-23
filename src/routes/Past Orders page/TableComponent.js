@@ -36,7 +36,7 @@ function TableComponent(props) {
     const table_headings = ["Order id", "Order Date & Time", "Store Location", "City", "Store Phone", "Total Items", "Price", "Status", "            ", "View"]
     return (
 
-        <div className='table__orders'>
+        <div>
 
             <table className='orders__table'>
                 <thead>
@@ -50,6 +50,7 @@ function TableComponent(props) {
                     </tr>
                 </thead>
                 <tbody className='table_body'>
+                    {console.log("table component rendering")}
                     {props.orders.map((order, index) => {
                         let bacc = "#f4f5f7"
                         if (index % 2) {
@@ -127,4 +128,4 @@ function TableComponent(props) {
     )
 }
 
-export default TableComponent
+export default React.memo(TableComponent) 

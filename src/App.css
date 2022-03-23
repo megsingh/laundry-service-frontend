@@ -1,5 +1,5 @@
 .App{
-  width: 1410px; 
+  width: 1405px; 
   height: 911px;
   /* border: 1px solid green; */
 } 
@@ -8,23 +8,23 @@
   position: absolute;
   top: 0;
   /* border: 1px solid; */
-  width: 1410px;
+  width: 1405px;
 }
 
 .footer{
   position: absolute;
   top:881px;
   /* border: 1px solid; */
-  width: 1410px;
+  width: 1405px;
 }
 
 .orderList, .createOrder{
   position: absolute;
   top: 81px;
-  left: 58px;
+  left: 45px;
   /* border: 1px solid yellow; */
   height:831px;
-  width: 1350px;
+  width: 1360px;
   background-color: #0000000f;
 }
 
@@ -33,4 +33,20 @@
   top: 81px;
   /* border: 1px solid red; */
   height: 750px;
+}
+
+.sidebar__orders .nav-create{
+  background-color: #FFFFFF;
+  background-image: url("./images/list-navbar.svg");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center;
+}
+
+.sidebar__create .nav-show{
+  background-color: #FFFFFF;
+  background-image: url("./images/more.svg");
+  background-repeat: no-repeat;
+  background-size: 20px;
+  background-position: center;
 }

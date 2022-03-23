@@ -1,9 +1,4 @@
-.create__buttons{
-    border: 1px solid;
-    box-sizing: border-box;
-    padding: 20px 48px;
-    display: flex;
-    justify-content: end;
-    gap: 17px;
+.table{
+    height: 730px;
 }
 

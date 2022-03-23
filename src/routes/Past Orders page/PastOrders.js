@@ -25,7 +25,7 @@ function PastOrders() {
                 Authorization: 'Bearer ' + token
             }
         }).then(res => {
-            //console.log("orders", res.data.orders.length);
+            
             setOrders(res.data.orders)
             setOrderCount(res.data.orders.length)
         })
@@ -41,6 +41,7 @@ function PastOrders() {
         )
     } else {
         ChildComponent = (
+            
             <div className='past__orders container'>
 
                 <div className="orderpage__heading">
@@ -64,6 +65,7 @@ function PastOrders() {
 
     return (
         <div>
+            {console.log("past orders component rendering")}
             {ChildComponent}
         </div>
             
@@ -71,4 +73,4 @@ function PastOrders() {
     )
 }
 
-export default PastOrders
+export default React.memo(PastOrders)

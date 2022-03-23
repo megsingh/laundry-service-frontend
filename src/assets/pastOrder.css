@@ -5,7 +5,7 @@
   flex-direction: row;
   align-items: center;
   height: calc(24.8px + 45px);
-  border: 1px solid;
+  /* border: 1px solid; */
 }
 
 

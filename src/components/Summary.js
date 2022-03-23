@@ -2,8 +2,8 @@ import React from 'react'
 import "../assets/summary.css"
 
 function Summary(props) {
-    console.log("summary popup");
-    console.log(props.order);
+    // console.log("summary popup");
+    // console.log(props.order);
     let showButton = false
     const washType = []
     const washPrice = []
@@ -51,7 +51,9 @@ function Summary(props) {
 
     return (
         <div className='popup-box'>
+
             <div className='summary__box'>
+            {console.log("summary component rendering")}
                 <div className='summary__header'>
                     Summary
                     <button className='summary__btn__close' onClick={props.handleSummaryClose}>x</button>
@@ -148,4 +150,4 @@ function Summary(props) {
     )
 }
 
-export default Summary
+export default React.memo(Summary)

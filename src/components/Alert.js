@@ -7,8 +7,8 @@ import axios from "axios"
 
 
 function Alert(props) {
-    console.log("alert popup");
-    console.log(props.id);
+    // console.log("alert popup");
+    // console.log(props.id);
     const updateStatus = () => {
     console.log("proceed clicked");
         // const token = localStorage.getItem("token")
@@ -35,6 +35,7 @@ function Alert(props) {
     return (
         <div className='popup-box'>
             <div className='alert__box'>
+            {console.log("alert component rendering")}
                 <div className='alert__header'>
                     Alert
                     <button className='btn__close' onClick={props.handleClose}>x</button>
@@ -61,4 +62,4 @@ function Alert(props) {
     )
 }
 
-export default Alert
+export default React.memo(Alert)

@@ -11,6 +11,7 @@ function OrderConfirm(props) {
 
   return (
     <div className='popup-box'>
+      {console.log("footer component rendering")}
     <div className='confirmation__box'>
         <div className='confirmation__header'>
             <div className='box__image'>
@@ -34,4 +35,4 @@ function OrderConfirm(props) {
   )
 }
 
-export default OrderConfirm
+export default React.memo(OrderConfirm)

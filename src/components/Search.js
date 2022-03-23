@@ -6,11 +6,11 @@ function Search() {
         <div className='search__container'>
             <div className='search__box'>
                 <div className='search__icon'>
-                    
+                {console.log("search component rendering")}
                 </div>
             </div>
         </div>
     )
 }
 
-export default Search
+export default React.memo(Search)

@@ -69,7 +69,9 @@ function SummaryToCreate(props) {
     }
 
     return (
+        
         <div className='popup-box'>
+            {console.log("summary to create component rendering")}
             <div className='summary__box'>
                 <div className='summary__header'>
                     Summary
@@ -173,4 +175,4 @@ function SummaryToCreate(props) {
 
 }
 
-export default SummaryToCreate
+export default React.memo(SummaryToCreate)

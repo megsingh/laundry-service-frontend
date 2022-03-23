@@ -80,7 +80,7 @@ export default function Signin(){
                     </div>
                     <div className='login_bottom'>
                         <p className='p-tag'>Don't have an account?</p>
-                        <Link to='/'><ButtonSign content="Register"></ButtonSign></Link>
+                        <Link to='/register'><ButtonSign content="Register"></ButtonSign></Link>
                     </div>
                 </div>
                 <div className='login_middle'></div>

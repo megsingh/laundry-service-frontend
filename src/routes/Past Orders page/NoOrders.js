@@ -18,6 +18,7 @@ function NoOrders() {
                 
             </div>
             <div className='no__orders'>
+            {console.log("no orders component rendering")}
                 <p>No Orders available</p>
                 <Link to="/create">
                 <ButtonOrder bg = "whitesmoke" color ="#5861AE" content="Create"/>
@@ -29,4 +30,4 @@ function NoOrders() {
     )
 }
 
-export default NoOrders
+export default React.memo(NoOrders)

@@ -46,7 +46,7 @@ export default function Register(){
                     </div>
                     <div className='register_bottom'>
                         <p className='p-tag'>Already have an account?</p>
-                        <Link to='/signin'><ButtonReg content="Sign In"></ButtonReg></Link>
+                        <Link to='/'><ButtonReg content="Sign In"></ButtonReg></Link>
                     </div>
                 </div>
                 <div className='register_middle'></div>
