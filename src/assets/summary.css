@@ -13,6 +13,7 @@
   position: fixed;
   top: 0;
   right: 0;
+  box-sizing: border-box;
   /* padding: 20px 30px; */
   overflow-y: scroll;
 } 
@@ -30,17 +31,18 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  height: 16px;
+  height: 10px;
   color: white;
-  padding: 1.8rem 1.2rem;
+  box-sizing: border-box;
+  padding: 1.8rem 40px;
   font-size: 22px;
 }
 
 .summary__storeinfo {
-    height: 50px;
+    height: 30px;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
-    padding: 20px 20px;
+    padding: 20px 40px;
     background-color: #F4F9FF;
 }
 
@@ -69,12 +71,45 @@
 }
 
 .summary__status {
-    min-height: 20px;
-    padding: 20px 20px;
+    min-height: 10px;
+    padding: 20px 40px;
     display: flex;
     flex-direction: row;
     gap: 10px;
     font-size: 12px;
+}
+
+.white-tick{
+    height: 7px;
+    width: 7px;
+    margin-left: 2px;
+    margin-bottom: 2px;
+    border-radius: 50%;
+    border: 0.2px solid #5861ae; 
+}
+
+.washing{
+    background-color: #5861ae;
+    height: 1.5px;
+    width: 156px;
+}
+
+.washing2{
+    background-color: #5861ae;
+    height: 1.5px;
+    width: 80px;
+}
+
+.delivery{
+    background-color: #5861ae;
+    height: 1.5px;
+    width: 156px;
+}
+
+.delivery2{
+    background-color: #5861ae;
+    height: 1.5px;
+    width: 80px;
 }
 
 .circle{
@@ -87,14 +122,15 @@
 .line{
     height: 0.5px;
     width: 156px;
-    background-color: black;
+    background-color: #E2E2E2;
     position: relative;
     top: 5px;
 }
 .summary__order {
-    height: 250px;
-    padding: 20px 20px;
+    /* height: 300px; */
+    padding: 20px 40px;
     font-size: 14px;
+    width: 900px;
 }
 
 .product__type{
@@ -112,33 +148,35 @@ font-size: 18px;
 
 .summary__table {
     border-collapse: collapse;
-    margin: 8px 0px;
+    margin: 5px 10px;
 }
   
   .summary__table td{
     /* padding: 9px 10px; */
     border-bottom: 1px solid #EAEDF0;
-    padding: 16px 20px 16px 20px;
+    padding: 13px 30px 13px 30px;
     text-align: left;
   }
 
   .summary__table td:nth-child(2){
-      padding-left: 130px;
-      padding-right: 130px;
+      /* padding-left: 80px;
+      padding-right: 80px; */
+      width: 360px;
+      text-align: center;
   }
 
   .product__total{
     padding:0px 40px;
     background-color: #5861ae;
-    height: 47px;
+    /* height: 47px; */
     color: white;
     font-weight: bold;
   }
 
 
 .summary__address {
-    height: 120px;
-    padding: 20px 20px;
+    /* height: 90px; */
+    padding: 10px 50px;
 }
 
 .summary__address label{
@@ -147,7 +185,7 @@ font-size: 18px;
 }
 
 .summary__address div{
-    margin-top: 25px;
+    margin-top: 10px;
     border: 1px solid #5861AE;
     border-radius: 4px;
     padding: 9px;

@@ -1,84 +1,43 @@
 import './App.css';
-import Footer from './components/footer'
-import Header from "./components/Header"
 import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import React, { useState } from "react"
+import React, { useEffect, useState } from "react"
 import PastOrders from "./routes/Past Orders page/PastOrders"
 import Create from "./routes/Create"
 import Register from "./routes/Register"
 import Signin from "./routes/Signin"
-import SideNavbar from "./components/SideNavbar.jsx"
 import PrivateRoute from './routes/PrivateRoute';
 import PublicRoute from './routes/PublicRoute';
 import NoFoundComponent from './routes/NoFoundComponent';
 
 function App() {
-  const token = localStorage.getItem("token")
-  let isAuthenticated
-  if (token === null) {
-    isAuthenticated = false
-  } else {
-    isAuthenticated = true
-  }
-
-  console.log("is user authenticated", isAuthenticated);
+  
   return (
     <Router>
       <div className="App">
-        {/* <div className="header">
-          <Header />
-        </div>
-        <div className="footer">
-          <Footer />
-        </div> */}
 
-        {/* <PublicRoute exact path="/" isAuthenticated={isAuthenticated}>
-          <div className="signin__page">
-            <Signin />
-          </div>
+        <Route exact path="/">
+          <Signin />
 
-        </PublicRoute>
-        <PublicRoute exact path="/register" isAuthenticated={isAuthenticated}>
-          <div className="register__page">
-            <Register />
-          </div>
-        </PublicRoute>
+        </Route>
+        <Route exact path="/register">
+          <Register />
+        </Route>
 
-        <PrivateRoute exact path="/create" isAuthenticated={isAuthenticated}>
-          <div>
-            <div className='sidebar__create'>
-              <SideNavbar />
-            </div>
-            <div className="createOrder">
-              <Create />
-            </div>
-          </div>
+        <PrivateRoute exact path="/create">
+          <Create />
+        </PrivateRoute>
 
-        </PrivateRoute> 
-
-        <PrivateRoute exact path="/orders" isAuthenticated={isAuthenticated}>
-          <div>
-            <div className='sidebar__orders'>
-              <SideNavbar />
-            </div>
-            <div className="orderList">
-            <PastOrders />
-              </div>
-          </div>
-  </PrivateRoute>    */}
+        <PrivateRoute exact path="/orders">
+          <PastOrders />
+        </PrivateRoute>
 
         {/* <Route path="*">
           <NoFoundComponent />
-          <div className="header">
-          <Header />
-        </div>
-        <div className="footer">
-          <Footer />
         </div>
         </Route> */}
 
 
-        <Switch>
+        {/* <Switch>
           <Route exact path="/register">
             <Register />
           </Route>
@@ -91,7 +50,7 @@ function App() {
           <Route exact path="/">
             <Signin />
           </Route>
-        </Switch>
+        </Switch> */}
 
       </div>
     </Router>

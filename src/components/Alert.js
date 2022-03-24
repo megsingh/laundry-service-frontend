@@ -10,7 +10,7 @@ function Alert(props) {
     // console.log("alert popup");
     // console.log(props.id);
     const updateStatus = () => {
-    console.log("proceed clicked");
+        console.log("proceed clicked");
         // const token = localStorage.getItem("token")
         const token = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJkYXRhIjoiNjIzNzU0NmUxYWYyYTA5NDZhMzFmMDJhIiwiaWF0IjoxNjQ3NzkzMjY2LCJleHAiOjE2NDgzOTgwNjZ9.gQRci9zeR7PSo5ZNTIYAAgCll4jqh49qMjZ5KjRAwiA"
         let config = {
@@ -19,14 +19,14 @@ function Alert(props) {
             }
         }
         let id = props.id
-        
-        axios.put(`http://localhost:5000/orders/${id}`, {},config)
+
+        axios.put(`http://localhost:5000/orders/${id}`, {}, config)
             .then(res => {
                 console.log(res);
                 console.log("alert closed");
                 props.handleClose();
-                <Redirect to = "/orders"></Redirect>
-                        })
+                window.location.href = '/orders';
+            })
             .catch(err => console.log(err)
             );
 
@@ -35,7 +35,7 @@ function Alert(props) {
     return (
         <div className='popup-box'>
             <div className='alert__box'>
-            {console.log("alert component rendering")}
+                {console.log("alert component rendering")}
                 <div className='alert__header'>
                     Alert
                     <button className='btn__close' onClick={props.handleClose}>x</button>
@@ -52,7 +52,7 @@ function Alert(props) {
                         </p>
 
                         <div onClick={updateStatus}>
-                        <ButtonOrder content="Proceed" bg="#5861AE" color="white" />
+                            <ButtonOrder content="Proceed" bg="#5861AE" color="white" />
                         </div>
                     </div>
                 </div>

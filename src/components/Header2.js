@@ -1,8 +1,8 @@
 import React from 'react'
-import { removeToken } from "./authOperations";
 import "../assets/header.css"
 
-function Header() {
+function Header2() {
+  
     return (
 
         <div className='header'>
@@ -15,14 +15,15 @@ function Header() {
                 <div className='list__item'>
                     Career
                 </div>
-                <a className="user__header list__item" onClick={() => { removeToken() }} href="/">
-                    <img className='user__img' src='https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cGVyc29ufGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=1000&q=60' alt="user" />
-                    <p>{localStorage.getItem("user")}</p></a>
-
+                <div className="user__header list__item" >
+                <p>Sign In</p>
+                </div>
+               
+                
             </nav>
 
         </div>
     )
 }
 
-export default Header
+export default Header2

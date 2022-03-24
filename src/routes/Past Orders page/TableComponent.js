@@ -93,7 +93,7 @@ function TableComponent(props) {
                                     {order.totalQuantity}
                                 </td>
                                 <td onClick={() => viewSummary(order)} className='price'>
-                                    {order.totalPrice} Rs
+                                    {order.totalPrice + 90} Rs
                                 </td>
                                 <td onClick={() => viewSummary(order)} style={statusStyle}>
                                     {order.status}

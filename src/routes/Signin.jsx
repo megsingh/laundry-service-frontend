@@ -1,8 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import '../assets/signin.css'
 import Refer from '../components/ReferFooter'
 import ButtonSign from '../components/ButtonOrder'
-import Header from '../components/Header'
+import Header2 from '../components/Header2'
 import Footer from '../components/footer'
 import "../App.css"
 import axios from 'axios'
@@ -13,6 +13,14 @@ export default function Signin(){
     const [user,setUser] = useState({
         data:"",password:""
     })
+
+    useEffect(() => {
+      localStorage.removeItem("token")
+      localStorage.removeItem("user")
+    
+      
+    }, [])
+    
     const [text,setText] = useState("")
     const [red,setRed] = useState("login_mobile")
     let name,value
@@ -42,7 +50,8 @@ export default function Signin(){
                     localStorage.setItem('user',userData)
                     setRed("login_mobile");
                     setText("");
-                   history.push("/orders")
+                //    history.push("/orders")
+                window.location.href = "/orders";
                 }
             }).catch(error=>{
                 setText("Invalid user ")
@@ -64,7 +73,8 @@ export default function Signin(){
                     localStorage.setItem('user',userData)
                     setRed("login_mobile")
                     setText("")
-                    history.push('./orders')
+                    // history.push('/orders')
+                    window.location.href = "/orders";
                 }
             }).catch(error=>{
                 setRed("login_mobile_red")
@@ -76,7 +86,7 @@ export default function Signin(){
     return(
         <div>
             <div className="header">
-          <Header />
+          <Header2 />
         </div>
         
         <div className="signin__page">

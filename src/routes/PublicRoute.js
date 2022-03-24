@@ -4,6 +4,8 @@ import {
   } from 'react-router-dom';
   
   function PublicRoute({ children, isAuthenticated, ...rest }) {
+    console.log("inside public route");
+    console.log("is user Authenticated ",isAuthenticated);
     return (
       <Route
         {...rest}

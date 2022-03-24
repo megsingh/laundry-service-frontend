@@ -1,5 +1,6 @@
 import React from 'react'
 import "../assets/summary.css"
+import whitetick from "../images/whitetick.png"
 
 function Summary(props) {
     // console.log("summary popup");
@@ -8,6 +9,20 @@ function Summary(props) {
     const washType = []
     const washPrice = []
     const Price = []
+    console.log(props.order.status);
+    let status_order = { "Ready to Pickup": false, "Picked up": false, "In Washing": false, "Washed": false, "In Ironing": false, "Ironed": false, "in Delivery": false, "Delivered": false }
+    for (let x in status_order) {
+        if (x === props.order.status) {
+            console.log(x);
+            status_order[x] = true
+            break
+        }
+        status_order[x] = true
+    }
+    console.log("before ",status_order);
+    if (props.order.status === 'Cancelled'){
+        status_order = { "Ready to Pickup": false, "Picked up": false, "In Washing": false, "Washed": false, "In Ironing": false, "Ironed": false, "in Delivery": false, "Delivered": false }
+    }
 
     const handleCancelClick = () => {
         props.handleSummaryClose()
@@ -45,6 +60,25 @@ function Summary(props) {
         washPrice.push(price)
     });
 
+    // let circleBackgroundColor = status_order[]
+    let circleStyle = {
+        backgroundColor: "#5861AE",
+        color: "#5861AE",
+    }
+
+    var width = Math.floor(Math.random() * 150);
+    let lineStyle = {
+        backgroundColor: "#5861AE",
+        height: "1.5px",
+        width:"156px"
+    }
+
+    let lineStyle2 = {
+        backgroundColor: "#5861AE",
+        height: "1.5px",
+        width: width
+    }
+
     // console.log("washType: ",washType);
     // console.log("washPrice: ",washPrice);
     // console.log("totalPrice: ",totalPrice);
@@ -53,7 +87,7 @@ function Summary(props) {
         <div className='popup-box'>
 
             <div className='summary__box'>
-            {console.log("summary component rendering")}
+                {/* {console.log("summary component rendering")} */}
                 <div className='summary__header'>
                     Summary
                     <button className='summary__btn__close' onClick={props.handleSummaryClose}>x</button>
@@ -73,17 +107,63 @@ function Summary(props) {
                     </div>
                 </div>
                 <div className='summary__status'>
-                    <div className='circle'></div>
-                    <p>Picked up</p>
-                    <div className='line'></div>
-                    <div className='circle'></div>
-                    <p>Washed</p>
-                    <div className='line'></div>
-                    <div className='circle'></div>
-                    <p>Ironed</p>
-                    <div className='line'></div>
-                    <div className='circle'></div>
-                    <p>Delivered</p>
+
+                    {status_order['Picked up'] ?
+                         (<div className='circle' style={circleStyle}><img className="white-tick" src={whitetick} alt="selected" /></div>)
+                        : (<div className='circle'></div>)}
+
+                    {status_order['Picked up'] ?
+                        (<p style={{ fontWeight: "bold" }}>Picked up</p>) :
+                        (<p>Picked Up</p>)}
+
+                    {status_order["In Washing"]=== false ?
+                   
+                        (<div className='line' ></div>) :
+                        status_order["Washed"] ?
+                            (<div className='line'><div className='washing'></div></div>) :
+                            (<div className='line'><div className='washing2'></div></div>)
+                    }
+
+                    {status_order['Washed'] ?
+                        (<div className='circle' style={circleStyle}><img className="white-tick" src={whitetick} alt="selected" /></div>) :
+                        (<div className='circle'></div>)}
+
+                    {status_order['Washed'] ?
+                        (<p style={{ fontWeight: "bold" }}>Washed</p>) :
+                        (<p>Washed</p>)}
+
+                    {status_order["In Ironing"] === false ?
+                        (<div className='line' ></div>) :
+                        status_order["Ironed"] ?
+                            (<div className='line'><div style={lineStyle}></div></div>) :
+                            (<div className='line'><div style={lineStyle2} className='delivery2'></div></div>)
+                    }
+
+                    {status_order["Ironed"] ?
+                    (<div className='circle' style={circleStyle}><img className="white-tick" src={whitetick} alt="selected" /></div>) :
+                    (<div className='circle'></div>)    
+                        }
+
+                    {status_order['Ironed'] ?
+                        (<p style={{ fontWeight: "bold" }}>Ironed</p>) :
+                        (<p>Ironed</p>)}
+                    
+                    {status_order['in Delivery']=== false ?
+
+                        (<div className='line' ></div>) :
+                        status_order["Delivered"] ?
+                            (<div className='line'><div className='delivery'></div></div>) :
+                            (<div className='line'><div className='delivery2'></div></div>)
+                    }
+
+                    {status_order['Delivered'] ?
+                        (<div className='circle' style={circleStyle} ><img className="white-tick" src={whitetick} alt="selected" /></div>) :
+                        (<div className='circle'></div>)
+                        }
+
+                    {status_order['Delivered'] ?
+                        (<p style={{ fontWeight: "bold" }}>Delivered</p>) :
+                        (<p>Delivered</p>)}
                 </div>
                 <div className='summary__order'>
                     <h4>Order Details</h4>

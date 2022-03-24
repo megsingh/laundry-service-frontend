@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import '../assets/register.css'
-import Header from '../components/Header'
+import Header2 from '../components/Header2'
 import Footer from '../components/footer'
 import Refer from '../components/ReferFooter'
 import ButtonReg from '../components/ButtonOrder'
@@ -40,7 +40,7 @@ export default function Register(){
     return(
         <div>
              <div className="header">
-          <Header />
+          <Header2 />
         </div>
         <div className="footer">
           <Footer />

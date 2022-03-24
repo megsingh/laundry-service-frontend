@@ -1,5 +1,5 @@
 .create__container{
-    border: 1px solid;
+    /* border: 1px solid red; */
     height: 730px;
 }
 
@@ -8,17 +8,21 @@
   border-collapse: collapse;
   position: absolute;
   left: 49px;
-  border: 1px solid;
+  /* border: 1px solid; */
   font-size: 13px;
-  /* width: 1263px; */
+  height: 640px; 
+  width: 1263px;
 }
 
 .create__table td {
-  padding: 17px 50px;
+  padding: 17px 20px;
   border-bottom: 1px solid #eaedf0;
   /* box-sizing: border-box; */
   vertical-align: middle;
-  border: 1px solid;
+  box-sizing: border-box;
+  /* border: 1px solid; */
+  /* width: 40px; */
+
 }
 
 .create__table th {
@@ -61,6 +65,10 @@
     border-radius: 2px;
     height: 26px;
     width: 63px;
+    color: #605959;
+    font-size: 16px;
+    margin: 0px 25px;
+    text-align: center;
 }
 
 .wash__image{
@@ -70,13 +78,26 @@
 .wash__button{
     height: 30px;
     width: 25px;
-    margin: 0px 37.5px;
+    margin: 0px 40px;
+    padding: 0px 10px;
     vertical-align: middle;
     border: none;
 }
 
 .create__table button:hover{
     cursor: pointer;
+}
+
+.price__calculation{
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.total__price{
+    display: inline-block;
+    font-size: 24px;
+    font-weight: bold;
+    color: #5861AE;
 }
 
 .reset__button{

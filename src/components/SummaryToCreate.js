@@ -1,8 +1,9 @@
 import React, {useState} from 'react'
 import axios from "axios"
+import "../assets/summary.css"
 
 function SummaryToCreate(props) {
-    
+    console.log(props.order);
     const [storeNo,setStoreNo] = useState("")
     const [storeAddress,setStoreAddress] = useState("")
     const [disabled,setDisabled] = useState(true)
@@ -14,22 +15,26 @@ function SummaryToCreate(props) {
     props.order.products.forEach(product => {
         let wash = ""
         let price = 0
-        //console.log(product);
+        console.log(product);
         if (product.washing === true) {
             wash += "Washing  "
-            price += 10
+            price += 20
+            console.log(price);
         }
         if (product.ironing === true) {
             wash += "Ironing  "
             price += 15
+            console.log(price);
         }
         if (product.chemicalwash === true) {
             wash += "Chemical wash  "
-            price += 10
+            price += 25
+            console.log(price);
         }
         if (product.drywash === true) {
             wash += "Dry wash  "
-            price += 25
+            price += 10
+            console.log(price);
         }
         Price.push(product.quantity * price)
         washType.push(wash)
@@ -72,7 +77,7 @@ function SummaryToCreate(props) {
         
         <div className='popup-box'>
             {console.log("summary to create component rendering")}
-            <div className='summary__box'>
+            <div className='summary__box' style={{overflow: "scroll"}}>
                 <div className='summary__header'>
                     Summary
                     <button className='summary__btn__close' onClick={props.handleSummaryClose}>x</button>
@@ -96,19 +101,7 @@ function SummaryToCreate(props) {
                         <p>{storeNo}</p>
                     </div>
                 </div>
-                <div className='summary__status'>
-                    <div className='circle'></div>
-                    <p>Picked up</p>
-                    <div className='line'></div>
-                    <div className='circle'></div>
-                    <p>Washed</p>
-                    <div className='line'></div>
-                    <div className='circle'></div>
-                    <p>Ironed</p>
-                    <div className='line'></div>
-                    <div className='circle'></div>
-                    <p>Delivered</p>
-                </div>
+               
                 <div className='summary__order'>
                     <h4>Order Details</h4>
                     <table className='summary__table'>

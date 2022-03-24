@@ -35,7 +35,7 @@ function PastOrders() {
             setOrders(res.data.orders)
             setOrderCount(res.data.orders.length)
         })
-    })
+    },[])
 
     let ChildComponent
 
@@ -77,8 +77,8 @@ function PastOrders() {
             <div className='sidebar__orders'>
                 <SideNavbar />
             </div>
-            <div>
-                {console.log("past orders component rendering")}
+            <div className='orderList'>
+                {/* {console.log("past orders component rendering")} */}
                 {ChildComponent}
             </div>
             <div className="footer">
