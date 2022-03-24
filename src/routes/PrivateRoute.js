@@ -1,5 +1,5 @@
 import { Route,Redirect } from 'react-router-dom';
-import { isAuthenticated } from "../components/authOperations"
+import { isAuthenticated } from "../components/utils/authOperations"
   
   function PrivateRoute({ children,...rest}) {
     // console.log("inside private route");

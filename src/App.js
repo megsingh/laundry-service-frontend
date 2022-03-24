@@ -1,13 +1,12 @@
 import './App.css';
-import { BrowserRouter as Router, Switch, Route } from 'react-router-dom';
-import React, { useEffect, useState } from "react"
-import PastOrders from "./routes/Past Orders page/PastOrders"
-import Create from "./routes/Create"
-import Register from "./routes/Register"
-import Signin from "./routes/Signin"
+import { BrowserRouter as Router, Route } from 'react-router-dom';
+import React from "react"
+import PastOrders from "./components/PastOrders/PastOrders"
+import Create from "./components/CreateOrder/Create.jsx"
+import Register from "./components/Register/Register.jsx"
+import Signin from "./components/Signin/Signin.jsx"
 import PrivateRoute from './routes/PrivateRoute';
-import PublicRoute from './routes/PublicRoute';
-import NoFoundComponent from './routes/NoFoundComponent';
+import NoFoundComponent from './components/NoPageFound/NoFoundComponent';
 
 function App() {
   
@@ -33,7 +32,6 @@ function App() {
 
         {/* <Route path="*">
           <NoFoundComponent />
-        </div>
         </Route> */}
 
 
